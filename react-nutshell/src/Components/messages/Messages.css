@@ -1,0 +1,61 @@
+.messages-container {
+    overflow-y: scroll;
+    /* height: 32.5rem; */
+    height: 78vh;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+    width: 8rem;
+}
+
+.messages-container::-webkit-scrollbar {
+    display: none;
+}
+
+.new-message-form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.new-message-form {
+    width: 6rem;
+}
+
+.message-card {
+    display: flex;
+    margin-top: 1.5rem;
+    margin-bottom: auto;
+    margin-left: 10px;
+    border-radius: 25px;
+    background-color: #2faac5;
+    color: #f3f3f3;
+    padding: 10px;
+    position: relative;
+    width: 35%;
+}
+
+.message-box {
+    display: flex;
+}
+
+.message-btns {
+    display: flex;
+    align-items: center;
+    /* margin-top: 0.75rem; */
+    /* width: 5rem; */
+    margin-left: 5rem;
+    display: none;
+}
+
+.message-card:hover {
+    background-color: #5cc4db;
+
+}
+.message-card:hover .message-btns {
+    /* display: inline-block; */
+    display: flex;
+    align-items: center;
+}
+
+.message-text {
+    width: 45%;
+}
