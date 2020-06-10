@@ -5,6 +5,8 @@ import NewsPage from './news/NewsPage';
 import TasksPage from './tasks/TaskPage';
 import MessagesPage from './messages/MessagePage';
 import EventsPage from './events/EventPage';
+import EventList from './events/EventList'
+import NewEventForm from './events/NewEventForm'
 
 class ApplicationViews extends Component {
 	render() {
@@ -29,9 +31,16 @@ class ApplicationViews extends Component {
 					}}
 				/>
 				<Route
+					exact
 					path="/events"
 					render={(props) => {
-						return <EventsPage />;
+						return <EventList {...props}/>;
+					}}
+				/>
+				<Route
+					path="/events/new"	
+					render={(props) => {
+						return <NewEventForm {...props}/>
 					}}
 				/>
 				<Route
