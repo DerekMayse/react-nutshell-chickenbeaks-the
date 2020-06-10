@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Container, ButtonGroup, Button } from "react-bootstrap";
+import { ButtonGroup, Button } from "react-bootstrap";
 
 class MessageCard extends Component {
   render() {
@@ -13,10 +13,17 @@ class MessageCard extends Component {
             </div>
             <div className="message-btns">
               <ButtonGroup>
-                <Button variant="secondary">Edit</Button>
+                <Button
+                  variant="secondary"
+                  onClick={() => console.log(this.props.message.id)}
+                >
+                  Edit
+                </Button>
                 <Button
                   variant="danger"
-                  onClick={() => this.props.deleteMessage(this.props.message.id)}
+                  onClick={() =>
+                    this.props.deleteMessage(this.props.message.id)
+                  }
                 >
                   Delete
                 </Button>

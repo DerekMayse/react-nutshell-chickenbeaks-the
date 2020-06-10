@@ -2,31 +2,57 @@ import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
 import { Form, Container } from "react-bootstrap";
 import "./Messages.css";
+import MessagesManager from "../../modules/MessagesManager";
 
 class NewMessageArea extends Component {
-  
-    handleFieldChange = evt => {
-        const stateToChange = {};
-        stateToChange[evt.target.id] = evt.target.value;
-        this.setState(stateToChange)
-    }
-  
-    render() {
+  state = {
+    message: "",
+    messages: [],
+  };
+
+  handleFieldChange = (evt) => {
+    this.setState({
+      message: evt.target.value,
+    });
+  };
+
+  createNewMessage = (evt) => {
+    const newlyCreatedMessage = {
+      message: this.state.message,
+    };
+
+    MessagesManager.postMessage(newlyCreatedMessage)
+}
+
+
+  render() {
     return (
       <>
         <Container className="new-message-form">
           <Form.Group>
-            <Form.Control size="lg" type="text" placeholder="New Message" />
+            <Form.Control
+              size="lg"
+              type="text"
+              onChange={this.handleFieldChange}
+              value={this.state.message}
+              placeholder="New Message"
+            />
           </Form.Group>
         </Container>
         <div className="mb-2">
-          <Button variant="primary" size="lg">
-            Send
-          </Button>{" "}
+            <Button
+              type="submit"
+              variant="primary"
+              size="lg"
+              onClick={this.createNewMessage}
+            >
+              Send
+            </Button>{" "}
         </div>
       </>
     );
   }
 }
 
+// onClick={this.props.addNewMessage(this.state.message)}
 export default NewMessageArea;
