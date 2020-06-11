@@ -1,8 +1,4 @@
-div.add-newTask-form{
-    width: 30%;
-}
-
-div.edit-task-form{
+div.add-newTask-form, div.edit-task-form, div.inline-edit-form{
     width: 30%;
 }
 

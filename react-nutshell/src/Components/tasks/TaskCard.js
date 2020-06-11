@@ -8,13 +8,16 @@ class TaskCard extends Component {
             <>
                 <Form>
                     <Form.Group controlId={this.props.task.id}>
-                        {this.props.task.isCompleted === false ? 
-                        <><Form.Check type="checkbox" label={<section onClick={() => this.props.handleEditID(this.props.task.id)}>{this.props.task.name}</section>} onClick={() => this.props.handlePatch(this.props.task.id)}  />
-                        <Form.Text className="text-muted">
-                            Due: {this.props.task.dueDate}
-                        </Form.Text>
-                        </>
-                         : ""}
+                        {this.props.task.isCompleted === false ?
+                            <>
+                                <Form.Check type="checkbox" 
+                                label={<section onClick={() => this.props.handleEditID(this.props.task.id)}>{this.props.task.name}</section>} 
+                                onClick={() => this.props.handlePatch(this.props.task.id)} />
+                                <Form.Text className="text-muted">
+                                    Due: {this.props.task.dueDate}
+                                </Form.Text>
+                            </>
+                            : ""}
                     </Form.Group>
                 </Form>
             </>

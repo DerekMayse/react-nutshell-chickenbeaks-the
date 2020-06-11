@@ -4,7 +4,6 @@ import HomePage from './home/Home';
 import NewsPage from './news/NewsPage';
 import TaskList from './tasks/TaskList';
 import TaskForm from './tasks/TaskForm';
-import TaskEditForm from './tasks/TaskEditForm'
 import MessagesPage from './messages/MessagePage';
 import EventsPage from './events/EventPage';
 
@@ -34,10 +33,6 @@ class ApplicationViews extends Component {
 						return <TaskForm {...props}/>
 					}} 
 				/>
-				<Route path="/tasks/:taskId(\d+)/edit" render={props => {
-						return <TaskEditForm {...props} />
-					}}
-        		/>
 				<Route
 					path="/events"
 					render={(props) => {
