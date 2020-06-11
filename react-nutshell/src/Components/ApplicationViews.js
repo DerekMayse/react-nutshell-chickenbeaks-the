@@ -1,12 +1,14 @@
 import { Route } from 'react-router-dom';
 import React, { Component } from 'react';
 import HomePage from './home/Home';
-import NewsPage from './news/NewsPage';
 import TasksPage from './tasks/TaskPage';
 import MessagesPage from './messages/MessagePage';
-import EventList from './events/EventList'
-import NewEventForm from './events/NewEventForm'
+import EventList from './events/EventList';
+import NewEventForm from './events/NewEventForm';
 import EventEditForm from './events/EventEditForm';
+import NewsForm from './news/NewsForm';
+import NewsList from './news/NewsList';
+import NewsEditForm from './news/NewsEditForm';
 
 class ApplicationViews extends Component {
 	render() {
@@ -19,11 +21,25 @@ class ApplicationViews extends Component {
 					}}
 				/>
 				<Route
+					exact
 					path="/news"
 					render={(props) => {
-						return <NewsPage />;
+						return <NewsList {...props} />;
 					}}
 				/>
+				<Route
+					path="/news/new"
+					render={(props) => {
+						return <NewsForm {...props} />;
+					}}
+				/>
+				<Route
+					path="/news/:newsId(\d+)/edit"
+					render={(props) => {
+						return <NewsEditForm {...props} />;
+					}}
+				/>
+
 				<Route
 					path="/tasks"
 					render={(props) => {
@@ -34,22 +50,21 @@ class ApplicationViews extends Component {
 					exact
 					path="/events"
 					render={(props) => {
-						return <EventList {...props}/>;
+						return <EventList {...props} />;
 					}}
 				/>
 				<Route
-					path="/events/new"	
+					path="/events/new"
 					render={(props) => {
-						return <NewEventForm {...props}/>
+						return <NewEventForm {...props} />;
 					}}
 				/>
 				<Route
-				exact
-				path="/events/:eventId(\d+)/edit"
-				render={(props) =>{
-					return <EventEditForm {...props}/>
-				}}
-
+					exact
+					path="/events/:eventId(\d+)/edit"
+					render={(props) => {
+						return <EventEditForm {...props} />;
+					}}
 				/>
 				<Route
 					path="/messages"

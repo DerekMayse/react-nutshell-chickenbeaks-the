@@ -48,44 +48,40 @@
       "date": "2020-06-03"
     },
     {
-      "name": "Another Test",
-      "date": "2020-06-16",
-      "location": "Home",
+      "name": "Fixed Merge?",
+      "date": "2020-06-11",
+      "location": "Test",
       "userId": 2,
-      "id": 20
+      "id": 21
     }
   ],
   "articles": [
     {
       "id": 1,
-      "title": "Tester Article",
-      "url": "testing.com/",
+      "title": "Tester Articles",
       "synopsis": "Published on Ashon's Account",
-      "date": "06/08/2020",
-      "userId": 1
+      "url": "testing.com/",
+      "date": "06/08/2020"
     },
     {
       "id": 2,
-      "title": "Tester Article",
-      "url": "testing.com/",
-      "synopsis": "Published on Derek's Account",
+      "name": "Tester",
       "date": "06/08/2020",
+      "location": "Derek's Account",
       "userId": 2
     },
     {
       "id": 3,
-      "title": "Tester Article",
-      "url": "testing.com/",
-      "synopsis": "Published on Mike's Account",
+      "name": "Tester",
       "date": "06/08/2020",
+      "location": "Mike's Account",
       "userId": 3
     },
     {
       "id": 4,
-      "title": "Tester Article",
-      "url": "testing.com/",
-      "synopsis": "Published on Swathi's Account",
+      "name": "Tester",
       "date": "06/08/2020",
+      "location": "Swathi's Account",
       "userId": 4
     }
   ],
