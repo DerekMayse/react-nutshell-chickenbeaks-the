@@ -1,21 +1,31 @@
 import { Route } from "react-router-dom";
 import React, { Component } from "react";
 import HomePage from "./home/Home";
+import UserForm from "./user-registration/UserForm"
 import NewsForm from "./news/NewsForm";
 import NewsList from "./news/NewsList";
 import NewsEditForm from "./news/NewsEditForm";
 import TasksPage from "./tasks/TaskPage";
 import MessagesPage from "./messages/MessagePage";
 import EventsPage from "./events/EventPage";
-
+import Login from "./auth/Login"
 class ApplicationViews extends Component {
   render() {
     return (
       <React.Fragment>
+        <Route exact path="/" render={(props) => {
+          return <Login/>
+        }} />
         <Route
           path="/home"
           render={(props) => {
             return <HomePage />;
+          }}
+        />
+          <Route
+          exact path="/register-account"
+          render={(props) => {
+            return <UserForm />;
           }}
         />
         <Route
