@@ -21,9 +21,9 @@ class NewMessageArea extends Component {
       message: this.state.message,
     };
 
-    MessagesManager.postMessage(newlyCreatedMessage)
-}
+    MessagesManager.postMessage(newlyCreatedMessage);
 
+  };
 
   render() {
     return (
@@ -39,15 +39,15 @@ class NewMessageArea extends Component {
             />
           </Form.Group>
         </Container>
-        <div className="mb-2">
-            <Button
-              type="submit"
-              variant="primary"
-              size="lg"
-              onClick={this.createNewMessage}
-            >
-              Send
-            </Button>{" "}
+        <div>
+          <Button
+            type="submit"
+            variant="primary"
+            size="lg"
+            onClick={this.createNewMessage}
+          >
+            Send
+          </Button>{" "}
         </div>
       </>
     );
