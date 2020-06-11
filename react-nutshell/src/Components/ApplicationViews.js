@@ -2,7 +2,9 @@ import { Route } from 'react-router-dom';
 import React, { Component } from 'react';
 import HomePage from './home/Home';
 import NewsPage from './news/NewsPage';
-import TasksPage from './tasks/TaskPage';
+import TaskList from './tasks/TaskList';
+import TaskForm from './tasks/TaskForm';
+import TaskEditForm from './tasks/TaskEditForm'
 import MessagesPage from './messages/MessagePage';
 import EventsPage from './events/EventPage';
 
@@ -23,11 +25,19 @@ class ApplicationViews extends Component {
 					}}
 				/>
 				<Route
-					path="/tasks"
+					exact path="/tasks"
 					render={(props) => {
-						return <TasksPage />;
+						return <TaskList {...props}/>;
 					}}
 				/>
+				<Route exact path="/tasks/new" render={(props) => {
+						return <TaskForm {...props}/>
+					}} 
+				/>
+				<Route path="/tasks/:taskId(\d+)/edit" render={props => {
+						return <TaskEditForm {...props} />
+					}}
+        		/>
 				<Route
 					path="/events"
 					render={(props) => {

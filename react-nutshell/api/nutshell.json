@@ -1,148 +1,169 @@
 {
-    "users":[
-        {
-            "id":1,
-            "email": "ashon@email.com",
-            "username": "ashon1",
-            "password": "abc123"
-        },
-        {
-            "id":2,
-            "email": "derek@email.com",
-            "username": "derek1",
-            "password": "abc123"
-        },
-        {
-            "id":3,
-            "email": "mike@email.com",
-            "username": "mike1",
-            "password": "abc123"
-        },
-        {
-            "id":4,
-            "email": "swathi@email.com",
-            "username": "swathi1",
-            "password": "abc123"
-        }
-    ],
-    "events":[
-        {
-            "id":1,
-            "name": "Tester",
-            "date": "06/08/2020",
-            "location": "Ashon's Account",
-            "userId":1
-        },
-        {
-            "id":2,
-            "name": "Tester",
-            "date": "06/08/2020",
-            "location": "Derek's Account",
-            "userId":2
-        },
-        {
-            "id":3,
-            "name": "Tester",
-            "date": "06/08/2020",
-            "location": "Mike's Account",
-            "userId":3
-        },
-        {
-            "id":4,
-            "name": "Tester",
-            "date": "06/08/2020",
-            "location": "Swathi's Account",
-            "userId":4
-        }
-    ],
-    "articles":[
-        {
-            "id":1,
-            "title": "Tester Article",
-            "url": "testing.com/",
-            "synopsis": "Published on Ashon's Account",
-            "date":"06/08/2020",
-            "userId":1
-        },
-        {
-            "id":2,
-            "title": "Tester Article",
-            "url": "testing.com/",
-            "synopsis": "Published on Derek's Account",
-            "date":"06/08/2020",
-            "userId":2
-        },
-        {
-            "id":3,
-            "title": "Tester Article",
-            "url": "testing.com/",
-            "synopsis": "Published on Mike's Account",
-            "date":"06/08/2020",
-            "userId":3
-        },
-        {
-            "id":4,
-            "title": "Tester Article",
-            "url": "testing.com/",
-            "synopsis": "Published on Swathi's Account",
-            "date":"06/08/2020",
-            "userId":4
-        }
-    ],
-    "messages": [
-        {
-            "id":1,
-            "message": "My name is Ashon.",
-            "time": "09:00",
-            "userId":1
-        },
-        {
-            "id":2,
-            "message": "My name is Derek.",
-            "time": "09:00",
-            "userId":2
-        },
-        {
-            "id":3,
-            "message": "My name is Mike.",
-            "time": "09:00",
-            "userId":3
-        },
-        {
-            "id":4,
-            "message": "My name is Swathi.",
-            "time": "09:00",
-            "userId":4
-        }
-    ],
-    "tasks":[
-        {
-            "id": 1,
-            "name": "Ashon's Task",
-            "completionDate": "06/09/2020",
-            "isCompleted": false,
-            "userId":1
-        },
-        {
-            "id": 2,
-            "name": "Derek's Task",
-            "completionDate": "06/09/2020",
-            "isCompleted": false,
-            "userId":2
-        },
-        {
-            "id": 3,
-            "name": "Mike's Task",
-            "completionDate": "06/09/2020",
-            "isCompleted": false,
-            "userId":3
-        },
-        {
-            "id": 4,
-            "name": "Swathi's Task",
-            "completionDate": "06/09/2020",
-            "isCompleted": false,
-            "userId":4
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "email": "ashon@email.com",
+      "username": "ashon1",
+      "password": "abc123"
+    },
+    {
+      "id": 2,
+      "email": "derek@email.com",
+      "username": "derek1",
+      "password": "abc123"
+    },
+    {
+      "id": 3,
+      "email": "mike@email.com",
+      "username": "mike1",
+      "password": "abc123"
+    },
+    {
+      "id": 4,
+      "email": "swathi@email.com",
+      "username": "swathi1",
+      "password": "abc123"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "name": "Tester",
+      "date": "06/08/2020",
+      "location": "Ashon's Account",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "name": "Tester",
+      "date": "06/08/2020",
+      "location": "Derek's Account",
+      "userId": 2
+    },
+    {
+      "id": 3,
+      "name": "Tester",
+      "date": "06/08/2020",
+      "location": "Mike's Account",
+      "userId": 3
+    },
+    {
+      "id": 4,
+      "name": "Tester",
+      "date": "06/08/2020",
+      "location": "Swathi's Account",
+      "userId": 4
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "title": "Tester Article",
+      "url": "testing.com/",
+      "synopsis": "Published on Ashon's Account",
+      "date": "06/08/2020",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "title": "Tester Article",
+      "url": "testing.com/",
+      "synopsis": "Published on Derek's Account",
+      "date": "06/08/2020",
+      "userId": 2
+    },
+    {
+      "id": 3,
+      "title": "Tester Article",
+      "url": "testing.com/",
+      "synopsis": "Published on Mike's Account",
+      "date": "06/08/2020",
+      "userId": 3
+    },
+    {
+      "id": 4,
+      "title": "Tester Article",
+      "url": "testing.com/",
+      "synopsis": "Published on Swathi's Account",
+      "date": "06/08/2020",
+      "userId": 4
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "message": "My name is Ashon.",
+      "time": "09:00",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "message": "My name is Derek.",
+      "time": "09:00",
+      "userId": 2
+    },
+    {
+      "id": 3,
+      "message": "My name is Mike.",
+      "time": "09:00",
+      "userId": 3
+    },
+    {
+      "id": 4,
+      "message": "My name is Swathi.",
+      "time": "09:00",
+      "userId": 4
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Ashon's Task",
+      "dueDate": "2020-06-09",
+      "isCompleted": false,
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "name": "Derek's Task",
+      "dueDate": "2020-06-09",
+      "isCompleted": false,
+      "userId": 2
+    },
+    {
+      "id": 3,
+      "name": "Mike's Task",
+      "dueDate": "2020-06-09",
+      "isCompleted": false,
+      "userId": 3
+    },
+    {
+      "id": 4,
+      "name": "Swathi's Task",
+      "dueDate": "2020-06-09",
+      "isCompleted": false,
+      "userId": 4
+    },
+    {
+      "id": 5,
+      "name": "Wash dirty dishes",
+      "dueDate": "2020-06-09",
+      "isCompleted": false,
+      "userId": 4
+    },
+    {
+      "id": 6,
+      "name": "Complete add functionality",
+      "dueDate": "2020-06-10",
+      "isCompleted": false,
+      "userId": 4
+    },
+    {
+      "id": 7,
+      "name": "Meditate/Journal",
+      "dueDate": "2020-06-13",
+      "isCompleted": false,
+      "userId": 4
+    }
+  ]
 }
