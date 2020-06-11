@@ -29,7 +29,7 @@ class Login extends Component {
     console.log(user[0].id);
     console.log(user[0].password);
     if (this.state.password === user[0].password){
-        // localStorage.setItem("userId", user[0].id);
+        localStorage.setItem("userId", user[0].id);
         localStorage.setItem(
           "credentials",
           JSON.stringify({

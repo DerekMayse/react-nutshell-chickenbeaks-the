@@ -1,5 +1,5 @@
 export default {
-    loginAccount(emailValue, passwordValue){
+    loginAccount(emailValue){
     return fetch(`http://localhost:5002/users?email=${emailValue}`)
     .then(r => {
         console.log(r.status)

@@ -1,4 +1,4 @@
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import React, { Component } from 'react';
 import HomePage from './home/Home';
 import NewsPage from './news/NewsPage';
@@ -8,19 +8,29 @@ import MessagesPage from './messages/MessagePage';
 import EventsPage from './events/EventPage';
 
 class ApplicationViews extends Component {
+	isAuthenticated = () => localStorage.getItem("credentials") !== null
+
 	render() {
 		return (
 			<React.Fragment>
 				<Route
 					path="/home"
 					render={(props) => {
-						return <HomePage />;
+						if (this.isAuthenticated()) {
+							return <HomePage />
+						} else {
+							return <Redirect to="/login" />
+						}
 					}}
 				/>
 				<Route
 					path="/news"
 					render={(props) => {
-						return <NewsPage />;
+						if (this.isAuthenticated()) {
+							return <NewsPage />
+						} else {
+							return <Redirect to="/login" />
+						}
 					}}
 				/>
 				<Route

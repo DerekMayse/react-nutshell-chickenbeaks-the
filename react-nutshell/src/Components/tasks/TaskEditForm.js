@@ -34,16 +34,16 @@ class TaskEditForm extends Component {
         return(
             <>
              <Container className="inline-edit-form"><br />
-                <Form>
+                <Form >
                     <Form.Group>
                         <Form.Label>Task Name: </Form.Label>
                         <Form.Control type="text" id="taskName" required
-                            onChange={this.handleFieldChange} value={this.state.taskName} placeholder="i.e. Clean dishes" />
+                            onChange={this.handleFieldChange} value={this.state.taskName} placeholder="i.e. Clean dishes" onKeyDown={this.handleKeyDown}/>
                     </Form.Group>
                     <Form.Text className="text-muted">
                         Due: {this.props.task.dueDate}
                     </Form.Text>
-                </Form>
+                
                 <div className="button-row">
                     <Button className="cancel-btn" variant="warning" type="button" onClick={() => this.props.handleEditID("")}>
                         Cancel
@@ -52,6 +52,8 @@ class TaskEditForm extends Component {
                         Submit Changes
                     </Button>
                 </div>
+
+                </Form>
              </Container>
             </>
         )

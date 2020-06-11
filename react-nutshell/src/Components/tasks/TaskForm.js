@@ -52,15 +52,17 @@ class TaskForm extends Component {
                     <Form.Control type="date" id="due" required
                         onChange={this.handleFieldChange} placeholder="mm/dd/yyyy" />
                 </Form.Group>
-            </Form>
+            
                 <div className="button-row">
-                <Button className="cancel-btn" variant="warning" type="button" onClick={() => this.props.history.push("/tasks")}>
-                    Cancel
-                </Button>
-                <Button className="submit-btn" variant="success" type="submit" disabled={this.state.loadingStatus} onClick={this.constructNewTask}>
-                    Submit
-                </Button>
+                    <Button className="cancel-btn" variant="warning" type="button" onClick={() => this.props.history.push("/tasks")}>
+                        Cancel
+                    </Button>
+                    <Button className="submit-btn" variant="success" type="submit" disabled={this.state.loadingStatus} onClick={this.constructNewTask}>
+                        Submit
+                    </Button>
                 </div>
+
+            </Form>
             </Container>
         </>
         )
