@@ -11,7 +11,7 @@ class NewMessageArea extends Component {
     curTime: new Date().toLocaleTimeString(),
   };
 
-  handleFieldChange = (evt) => {
+  handleNewFieldChange = (evt) => {
     this.setState({
       message: evt.target.value,
     });
@@ -23,7 +23,15 @@ class NewMessageArea extends Component {
       time: this.state.curTime
     };
 
-    MessagesManager.postMessage(newlyCreatedMessage);
+    MessagesManager.postMessage(newlyCreatedMessage).then(() => {
+        MessagesManager.getAllMessages().then(
+            (newMessages) => {
+                this.setState({
+                    messages: newMessages,
+                })
+            }
+        )
+    })
 
   };
 
@@ -35,7 +43,7 @@ class NewMessageArea extends Component {
             <Form.Control
               size="lg"
               type="text"
-              onChange={this.handleFieldChange}
+              onChange={this.handleNewFieldChange}
               value={this.state.message}
               placeholder="New Message"
             />
@@ -46,7 +54,7 @@ class NewMessageArea extends Component {
             type="submit"
             variant="primary"
             size="lg"
-            onClick={this.createNewMessage}
+            onClick={() => this.createNewMessage()}
           >
             Send
           </Button>{" "}

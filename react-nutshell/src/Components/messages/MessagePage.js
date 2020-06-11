@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import MessagesManager from "../../modules/MessagesManager";
 import MessageCard from "./MessageCard";
 import NewMessageArea from "./NewMessageArea";
+import MessageEditForm from "./MessageEditForm";
 import "./Messages.css";
 
 class MessagesPage extends Component {
@@ -10,15 +11,27 @@ class MessagesPage extends Component {
     messages: [],
     message: "",
     editId: "",
+    loadingStatus: false,
   };
 
-  componentDidMount() {
-    MessagesManager.getAllMessages().then((messages) => {
-      this.setState({
-        messages: messages,
+  handleCancel() {}
+  
+  handleEditId = (idToEdit) => {
+    this.setState({ editId: idToEdit });
+  };
+
+
+  updateExistingMessage = (editedMessage) => {
+    this.setState({ loadingStatus: true });
+    MessagesManager.updateMessage(editedMessage).then(() => {
+      MessagesManager.getAllMessages().then((messages) => {
+        this.setState({
+          messages: messages,
+          editId: "",
+        });
       });
     });
-  }
+  };
 
   //   componentDidUpdate() {
   //     MessagesManager.getAllMessages().then((newMessages) => {
@@ -38,45 +51,53 @@ class MessagesPage extends Component {
     });
   };
 
-  editMessage = (editId) => {
 
+
+
+  componentDidMount() {
+    MessagesManager.getAllMessages().then((messages) => {
+      this.setState({
+        messages: messages,
+      });
+    });
   }
 
-  handleFieldChange = (evt) => {
-    this.setState({
-      editId: evt.target.value,
-    });
-  };
-
   render() {
-    
-    if(this.state.editId === this.handleFieldChange) {
-        return (
-            console.log(this.state.editId)
-        )
-    } else {
-        return (
-            <>
-              <Container className="messages-container">
-                {this.state.messages.map((message) => (
-                  <MessageCard
-                    {...this.props}
-                    key={message.id}
-                    message={message}
-                    deleteMessage={this.deleteMessage}
-                    editId={this.editId}
-                  />
-                ))}
-              </Container>
-    
-              <Container fixed="bottom" className="new-message-form-container">
-                <NewMessageArea />
-              </Container>
-            </>
-          );
-    
-    }
-    
+    return (
+      <>
+        <Container className="messages-container">
+          {this.state.messages.map((message) =>
+            this.state.editId !== message.id ? (
+                <MessageCard
+                key={message.id}
+                message={message}
+                deleteMessage={this.deleteMessage}
+                handleEditId={this.handleEditId}
+                {...this.props}
+              />
+
+              
+
+
+            ) : (
+                <MessageEditForm 
+                key={message.id}
+                message={message}
+                handleEditId={this.handleEditId}
+                handleUpdate={this.updateExistingMessage}
+                
+              />
+
+
+            )
+          )}
+        </Container>
+
+        <Container fixed="bottom" className="new-message-form-container">
+          <NewMessageArea />
+        </Container>
+      </>
+    );
   }
 }
 
