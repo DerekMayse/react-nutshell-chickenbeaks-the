@@ -4,9 +4,9 @@ import HomePage from './home/Home';
 import NewsPage from './news/NewsPage';
 import TasksPage from './tasks/TaskPage';
 import MessagesPage from './messages/MessagePage';
-import EventsPage from './events/EventPage';
 import EventList from './events/EventList'
 import NewEventForm from './events/NewEventForm'
+import EventEditForm from './events/EventEditForm';
 
 class ApplicationViews extends Component {
 	render() {
@@ -42,6 +42,14 @@ class ApplicationViews extends Component {
 					render={(props) => {
 						return <NewEventForm {...props}/>
 					}}
+				/>
+				<Route
+				exact
+				path="/events/:eventId(\d+)/edit"
+				render={(props) =>{
+					return <EventEditForm {...props}/>
+				}}
+
 				/>
 				<Route
 					path="/messages"

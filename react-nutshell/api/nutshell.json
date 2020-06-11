@@ -27,13 +27,6 @@
   ],
   "events": [
     {
-      "name": "Test",
-      "date": "2020-06-09",
-      "location": "Home",
-      "userId": 2,
-      "id": 5
-    },
-    {
       "name": "Testing delete stuff",
       "date": "2020-06-08",
       "location": "Home",
@@ -41,18 +34,25 @@
       "id": 8
     },
     {
-      "name": "4123123",
-      "date": "2020-06-16",
-      "location": "Home",
+      "id": 18,
       "userId": 2,
-      "id": 12
+      "name": "Help",
+      "location": "React",
+      "date": "2020-06-16"
     },
     {
-      "name": "Enter key",
+      "id": 19,
+      "userId": 2,
+      "name": "Testing Edit",
+      "location": "Home",
+      "date": "2020-06-03"
+    },
+    {
+      "name": "Another Test",
       "date": "2020-06-16",
       "location": "Home",
       "userId": 2,
-      "id": 13
+      "id": 20
     }
   ],
   "articles": [

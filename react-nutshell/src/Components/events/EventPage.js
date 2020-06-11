@@ -9,7 +9,15 @@ class EventPage extends Component {
 					<p>Date: {this.props.event.date}</p>
 					<p>Location: {this.props.event.location}</p>
 					<div className="btn-div">
-						<button className="event-btn">Edit</button>
+						<button
+							className="event-btn"
+							type="button"
+							onClick={() => {
+								this.props.history.push(`/events/${this.props.event.id}/edit`);
+							}}
+						>
+							Edit
+						</button>
 						<button
 							className="event-btn"
 							type="button"

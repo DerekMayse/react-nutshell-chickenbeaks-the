@@ -37,12 +37,12 @@ class EventList extends Component {
 							this.props.history.push('/events/new');
 						}}
 					>
-						New Post
+						New Event
 					</button>
 				</section>
 				<div id="event-container">
 					{this.state.events.map((event) => (
-						<EventPage key={event.id} event={event} deleteEvent={this.deleteEvent} />
+						<EventPage key={event.id} event={event} deleteEvent={this.deleteEvent} {...this.props}/>
 					))}
 				</div>
 			</React.Fragment>
