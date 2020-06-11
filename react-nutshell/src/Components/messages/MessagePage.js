@@ -9,6 +9,7 @@ class MessagesPage extends Component {
   state = {
     messages: [],
     message: "",
+    editId: "",
   };
 
   componentDidMount() {
@@ -19,14 +20,13 @@ class MessagesPage extends Component {
     });
   }
 
-//   componentDidUpdate() {
-//     MessagesManager.getAllMessages().then((newMessages) => {
-//       this.setState({
-//         messages: newMessages,
-//       });
-//     });
-//   }
-
+  //   componentDidUpdate() {
+  //     MessagesManager.getAllMessages().then((newMessages) => {
+  //       this.setState({
+  //         messages: newMessages,
+  //       });
+  //     });
+  //   }
 
   deleteMessage = (id) => {
     MessagesManager.deleteMessages(id).then(() => {
@@ -38,25 +38,45 @@ class MessagesPage extends Component {
     });
   };
 
-  render() {
-    return (
-      <>
-        <Container className="messages-container">
-          {this.state.messages.map((message) => (
-            <MessageCard
-              {...this.props}
-              key={message.id}
-              message={message}
-              deleteMessage={this.deleteMessage}
-            />
-          ))}
-        </Container>
+  editMessage = (editId) => {
 
-        <Container fixed="bottom" className="new-message-form-container">
-          <NewMessageArea />
-        </Container>
-      </>
-    );
+  }
+
+  handleFieldChange = (evt) => {
+    this.setState({
+      editId: evt.target.value,
+    });
+  };
+
+  render() {
+    
+    if(this.state.editId === this.handleFieldChange) {
+        return (
+            console.log(this.state.editId)
+        )
+    } else {
+        return (
+            <>
+              <Container className="messages-container">
+                {this.state.messages.map((message) => (
+                  <MessageCard
+                    {...this.props}
+                    key={message.id}
+                    message={message}
+                    deleteMessage={this.deleteMessage}
+                    editId={this.editId}
+                  />
+                ))}
+              </Container>
+    
+              <Container fixed="bottom" className="new-message-form-container">
+                <NewMessageArea />
+              </Container>
+            </>
+          );
+    
+    }
+    
   }
 }
 

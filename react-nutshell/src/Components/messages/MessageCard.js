@@ -15,7 +15,7 @@ class MessageCard extends Component {
               <ButtonGroup>
                 <Button
                   variant="secondary"
-                  onClick={() => console.log(this.props.message.id)}
+                  onClick={() => this.setState({editId: this.props.message.id})}
                 >
                   Edit
                 </Button>

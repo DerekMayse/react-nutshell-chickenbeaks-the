@@ -8,6 +8,7 @@ class NewMessageArea extends Component {
   state = {
     message: "",
     messages: [],
+    curTime: new Date().toLocaleTimeString(),
   };
 
   handleFieldChange = (evt) => {
@@ -16,9 +17,10 @@ class NewMessageArea extends Component {
     });
   };
 
-  createNewMessage = (evt) => {
+  createNewMessage = (evt) => {    
     const newlyCreatedMessage = {
       message: this.state.message,
+      time: this.state.curTime
     };
 
     MessagesManager.postMessage(newlyCreatedMessage);
