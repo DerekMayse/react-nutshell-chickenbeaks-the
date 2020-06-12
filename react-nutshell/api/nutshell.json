@@ -107,6 +107,14 @@
       "date": "06/08/2020",
       "location": "Swathi's Account",
       "userId": 4
+    },
+    {
+      "title": "Look at ME!!",
+      "synopsis": "of this",
+      "url": "dummy article",
+      "date": "5/12/2020 8:24",
+      "userId": 2,
+      "id": 5
     }
   ],
   "messages": [
