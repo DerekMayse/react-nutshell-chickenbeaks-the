@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import Button from 'react-bootstrap/Button'
 import { Form, Container } from 'react-bootstrap'
 import LoginManager from '../../modules/LoginManager'
+import {Link } from "react-router-dom"
 import './Login.css'
 
 class Login extends Component {
@@ -75,7 +76,8 @@ class Login extends Component {
               </Form.Group>
               <div className="button-row">
                 <Button variant="outline-success" type="submit">Submit </Button>
-              </div>           
+              </div>     
+              <Link to={`/register-account`}>Register An Account?</Link>
             </Form>
           </Container>
       </>
