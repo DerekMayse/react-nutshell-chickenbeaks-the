@@ -7,12 +7,13 @@ import NewsList from "./news/NewsList";
 import NewsEditForm from "./news/NewsEditForm";
 import TaskList from './tasks/TaskList';
 import TaskForm from './tasks/TaskForm';
+import EventList from './events/EventList';
+import NewEventForm from './events/NewEventForm';
+import EventEditForm from './events/EventEditForm';
 import MessagesPage from './messages/MessagePage';
-import EventsPage from './events/EventPage';
 
 class ApplicationViews extends Component {
-	isAuthenticated = () => localStorage.getItem("credentials") !== null
-
+  isAuthenticated = () => localStorage.getItem("credentials") !== null
 	render() {
 		return (
 			<React.Fragment>
@@ -51,6 +52,8 @@ class ApplicationViews extends Component {
             return <NewsEditForm {...props} />;
           }}
         />
+
+        {/* Route to tasks page that prints all tasks under a particular user to the DOM */}
 				<Route
 					exact path="/tasks"
 					render={(props) => {
@@ -61,18 +64,34 @@ class ApplicationViews extends Component {
           }
 					}}
 				/>
+
+        {/* Route to 'add new task'form */}
 				<Route exact path="/tasks/new" render={(props) => {
 						return <TaskForm {...props}/>
 					}} 
 				/>
 				<Route
-					exact path="/events"
+					exact
+					path="/events"
 					render={(props) => {
 						if (this.isAuthenticated()) {
-              return <EventsPage {...props} />
+              return <EventList {...props} />
           } else {
               return <Redirect to="/" />
           }
+					}}
+				/>
+				<Route
+					path="/events/new"
+					render={(props) => {
+						return <NewEventForm {...props} />;
+					}}
+				/>
+				<Route
+					exact
+					path="/events/:eventId(\d+)/edit"
+					render={(props) => {
+						return <EventEditForm {...props} />;
 					}}
 				/>
 				<Route

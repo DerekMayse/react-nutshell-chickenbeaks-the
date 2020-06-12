@@ -3,6 +3,7 @@ import { Button, Container, Form } from 'react-bootstrap'
 import './TaskForm.css'
 
 class TaskEditForm extends Component {
+    //Sending in task name from TaskList
     state= {
         taskName: this.props.task.name
     }
@@ -13,6 +14,8 @@ class TaskEditForm extends Component {
         this.setState(stateToChange);
     };
 
+    // Function that collects edited object to be passed to handleUpdate function in TaskList
+    // Main key of inline edit- actually edit whatever property of the existing object that is being passed in from TakList
     makeEditedTask = () =>{
         if (this.state.taskName === ""){
             window.alert("Please input a task name");
@@ -28,7 +31,8 @@ class TaskEditForm extends Component {
         this.props.handleUpdate(editedTask)
         }
     }
-    
+
+    // Inline edit Form that appears on the TaskList page; pay attention to value and onClick functionality
     render(){
 
         return(

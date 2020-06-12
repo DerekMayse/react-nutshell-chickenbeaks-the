@@ -3,6 +3,10 @@ import TaskManager from '../../modules/TaskManager';
 import { Button, Container, Form } from 'react-bootstrap'
 import './TaskForm.css'
 
+// Creating an add new task form
+// Set properties that user inputs in state
+// ConstructNewTask to handle errors and create task object to be passed into fetch call to be added to JSON, then route back to /tasks page
+// Render form with JSX
 class TaskForm extends Component {
     state = {
         taskName: "",

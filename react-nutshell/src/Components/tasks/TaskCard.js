@@ -4,11 +4,16 @@ import { Form } from 'react-bootstrap'
 import './TaskCard.css'
 
 class TaskCard extends Component {
+    //Card printing for each individual task
+    /* Print only if the task is not checked or incomplete */
+    // label onClick is to set editID for inline editing
+    // input checkbox onclick to handlePatch to check tasks as complete 
     render() {
         return (
             <>
                 <Form>
                     <Form.Group controlId={this.props.task.id}>
+                        
                         {this.props.task.isCompleted === false ?
                             <>
                                 <Form.Check type="checkbox" 
