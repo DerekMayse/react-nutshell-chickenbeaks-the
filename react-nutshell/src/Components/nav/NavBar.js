@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './NavBar.css';
 import { Navbar, Nav } from 'react-bootstrap';
 
+//Added Logout link to NavBar that redirects user to "/" page and clears the local storage of the logged in user's information(credentials, userId, username)
 class NavBar extends Component {
 	render() {
 		return (

@@ -12,8 +12,11 @@ import NewEventForm from './events/NewEventForm';
 import EventEditForm from './events/EventEditForm';
 import MessagesPage from './messages/MessagePage';
 
+
 class ApplicationViews extends Component {
+  //Added conditional authentication in navbar pages so user will not be able to access any pages without logging in
   isAuthenticated = () => localStorage.getItem("credentials") !== null
+
 	render() {
 		return (
 			<React.Fragment>

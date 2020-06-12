@@ -20,19 +20,19 @@ class Login extends Component {
     this.setState(stateToChange)
   }
 
+//handleLogin function fetches user's information from JSON using email
+//   if the email doesn't exist, then an alert will pop up prompting the user to try again
+// if the email exists, we then check the password and if the condition is true, we are setting userId, username and credential (email and password) in the localStorage
+// then we get redirected to the Home page and the user can click on whatever page they want
+// if the email exists, but password doesn't match, then an alert will appear notifying the user that the password doesn't match
+
   handleLogin = (e) => {
     e.preventDefault()
-    /*
-        For now, just store the email and password that
-        the customer enters into local storage.
-    */
+
    LoginManager.loginAccount(this.state.email).then(user => {
-    // console.log(user)
-    // console.log(user[0].id);
-    // console.log(user[0].password);
     if(user.length === 0){
         window.alert(`I'm sorry! The email you entered is not in our system. Please try again!`)
-    }else{
+    } else{
         if (this.state.password === user[0].password){
             localStorage.setItem("userId", user[0].id);
             localStorage.setItem("userName", user[0].username);
@@ -51,13 +51,11 @@ class Login extends Component {
         }
     }
     
-  })
+    })
 
-    //redirect to page user clicked on
-    // this.props.history.goBack();
-    //redirect to home page
   }
 
+// rendering the login form
 
   render() {
 
