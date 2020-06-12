@@ -6,12 +6,13 @@ import NewsList from "./news/NewsList";
 import NewsEditForm from "./news/NewsEditForm";
 import TaskList from './tasks/TaskList';
 import TaskForm from './tasks/TaskForm';
+import EventList from './events/EventList';
+import NewEventForm from './events/NewEventForm';
+import EventEditForm from './events/EventEditForm';
 import MessagesPage from './messages/MessagePage';
-import EventsPage from './events/EventPage';
+
 
 class ApplicationViews extends Component {
-	// isAuthenticated = () => localStorage.getItem("credentials") !== null
-
 	render() {
 		return (
 			<React.Fragment>
@@ -51,9 +52,23 @@ class ApplicationViews extends Component {
 					}} 
 				/>
 				<Route
+					exact
 					path="/events"
 					render={(props) => {
-						return <EventsPage />;
+						return <EventList {...props} />;
+					}}
+				/>
+				<Route
+					path="/events/new"
+					render={(props) => {
+						return <NewEventForm {...props} />;
+					}}
+				/>
+				<Route
+					exact
+					path="/events/:eventId(\d+)/edit"
+					render={(props) => {
+						return <EventEditForm {...props} />;
 					}}
 				/>
 				<Route

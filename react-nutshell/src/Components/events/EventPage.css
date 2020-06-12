@@ -1,0 +1,77 @@
+.new-post-btn{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    align-self: center;
+    justify-self: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.single-events:first-child{
+    background-color: lightblue;
+    font-size: 25px;
+    font-weight: bolder;
+}
+#event-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+#event-page{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.single-events{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    border: 1px solid black;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 1em;
+}
+.event-btn{
+    align-self: center;
+    justify-self: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+.single-events h3{
+    margin-bottom: 1em;
+}
+.event-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    text-align: center;
+    margin-top: 1em;
+}
+.event-form input{
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.event-form-btn{
+    align-self: center;
+    justify-self: center;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+.event-form label{
+    margin-top: 1em;
+    font-weight: bolder;
+}
