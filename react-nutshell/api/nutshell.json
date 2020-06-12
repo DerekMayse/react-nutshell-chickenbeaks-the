@@ -57,36 +57,27 @@
   ],
   "articles": [
     {
-      "id": 1,
-      "title": "Tester Article",
-      "url": "testing.com/",
-      "synopsis": "Published on Ashon's Account",
-      "date": "06/08/2020",
-      "userId": 1
-    },
-    {
-      "id": 2,
-      "title": "Tester Article",
-      "url": "testing.com/",
-      "synopsis": "Published on Derek's Account",
-      "date": "06/08/2020",
-      "userId": 2
-    },
-    {
-      "id": 3,
-      "title": "Tester Article",
-      "url": "testing.com/",
-      "synopsis": "Published on Mike's Account",
-      "date": "06/08/2020",
-      "userId": 3
-    },
-    {
       "id": 4,
-      "title": "Tester Article",
-      "url": "testing.com/",
-      "synopsis": "Published on Swathi's Account",
-      "date": "06/08/2020",
-      "userId": 4
+      "title": "eoip 5",
+      "synopsis": "wqfcQ",
+      "url": "FDWAE",
+      "date": "5/10/2020 13:59"
+    },
+    {
+      "title": "Look at ME!!",
+      "synopsis": "of this",
+      "url": "jojojm",
+      "date": "5/10/2020 15:7",
+      "userId": 2,
+      "id": 5
+    },
+    {
+      "title": "Look at ME!!",
+      "synopsis": "of this",
+      "url": "jojojm",
+      "date": "5/10/2020 15:21",
+      "userId": 2,
+      "id": 6
     }
   ],
   "messages": [

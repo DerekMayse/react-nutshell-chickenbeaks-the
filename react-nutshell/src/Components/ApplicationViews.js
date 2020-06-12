@@ -1,7 +1,9 @@
 import { Route } from 'react-router-dom';
 import React, { Component } from 'react';
 import HomePage from './home/Home';
-import NewsPage from './news/NewsPage';
+import NewsForm from "./news/NewsForm";
+import NewsList from "./news/NewsList";
+import NewsEditForm from "./news/NewsEditForm";
 import TaskList from './tasks/TaskList';
 import TaskForm from './tasks/TaskForm';
 import MessagesPage from './messages/MessagePage';
@@ -19,12 +21,25 @@ class ApplicationViews extends Component {
 						return <HomePage />;
 					}}
 				/>
-				<Route
-					path="/news"
-					render={(props) => {
-						return <NewsPage />;
-					}}
-				/>
+        <Route
+          exact
+          path="/news"
+          render={(props) => {
+            return <NewsList {...props} />;
+          }}
+        />
+        <Route
+          path="/news/new"
+          render={(props) => {
+            return <NewsForm {...props} />;
+          }}
+        />
+        <Route
+          path="/news/:newsId(\d+)/edit"
+          render={(props) => {
+            return <NewsEditForm {...props} />;
+          }}
+        />
 				<Route
 					exact path="/tasks"
 					render={(props) => {
@@ -49,7 +64,7 @@ class ApplicationViews extends Component {
 				/>
 			</React.Fragment>
 		);
-	}
+  }
 }
 
 export default ApplicationViews;
