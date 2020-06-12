@@ -5,7 +5,7 @@ export default{
         return fetch(`${remoteURL}/tasks/${id}`).then(result => result.json())
     },
     getAll(){
-        return fetch(`${remoteURL}/tasks`).then(result => result.json())
+        return fetch(`${remoteURL}/tasks?userId=${localStorage.getItem("userId")}`).then(result => result.json())
     },
     patch(id){
         return fetch(`${remoteURL}/tasks/${id}`, {
@@ -18,7 +18,6 @@ export default{
         .then(result => result.json())
     },
     post(newTask){
-        // this.newTask.userId = localStorage.getItem("userId")
         return fetch(`${remoteURL}/tasks`, {
             method: "POST",
             headers: {

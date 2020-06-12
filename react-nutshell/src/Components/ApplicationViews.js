@@ -1,5 +1,6 @@
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import React, { Component } from 'react';
+import Login from './auth/Login'
 import HomePage from './home/Home';
 import NewsForm from "./news/NewsForm";
 import NewsList from "./news/NewsList";
@@ -10,22 +11,32 @@ import MessagesPage from './messages/MessagePage';
 import EventsPage from './events/EventPage';
 
 class ApplicationViews extends Component {
-	// isAuthenticated = () => localStorage.getItem("credentials") !== null
+	isAuthenticated = () => localStorage.getItem("credentials") !== null
 
 	render() {
 		return (
 			<React.Fragment>
+        <Route exact path="/" component={Login}/>
+
 				<Route
-					path="/home"
+					exact path="/home"
 					render={(props) => {
-						return <HomePage />;
+						if (this.isAuthenticated()) {
+              return <HomePage {...props} />
+          } else {
+              return <Redirect to="/" />
+          }
 					}}
 				/>
         <Route
           exact
           path="/news"
           render={(props) => {
-            return <NewsList {...props} />;
+            if (this.isAuthenticated()) {
+              return <NewsList {...props} />
+          } else {
+              return <Redirect to="/" />
+          }
           }}
         />
         <Route
@@ -43,7 +54,11 @@ class ApplicationViews extends Component {
 				<Route
 					exact path="/tasks"
 					render={(props) => {
-						return <TaskList {...props}/>;
+						if (this.isAuthenticated()) {
+              return <TaskList {...props} />
+          } else {
+              return <Redirect to="/" />
+          }
 					}}
 				/>
 				<Route exact path="/tasks/new" render={(props) => {
@@ -51,15 +66,23 @@ class ApplicationViews extends Component {
 					}} 
 				/>
 				<Route
-					path="/events"
+					exact path="/events"
 					render={(props) => {
-						return <EventsPage />;
+						if (this.isAuthenticated()) {
+              return <EventsPage {...props} />
+          } else {
+              return <Redirect to="/" />
+          }
 					}}
 				/>
 				<Route
-					path="/messages"
+					exact path="/messages"
 					render={(props) => {
-						return <MessagesPage />;
+						if (this.isAuthenticated()) {
+              return <MessagesPage {...props} />
+          } else {
+              return <Redirect to="/" />
+          }
 					}}
 				/>
 			</React.Fragment>

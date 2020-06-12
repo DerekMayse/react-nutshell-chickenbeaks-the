@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { Form } from 'react-bootstrap'
+import './TaskCard.css'
 
 class TaskCard extends Component {
     render() {
@@ -11,7 +12,7 @@ class TaskCard extends Component {
                         {this.props.task.isCompleted === false ?
                             <>
                                 <Form.Check type="checkbox" 
-                                label={<Link onClick={() => this.props.handleEditID(this.props.task.id)}>{this.props.task.name}</Link>} 
+                                label={<section onClick={() => this.props.handleEditID(this.props.task.id)}>{this.props.task.name}</section>} 
                                 onClick={() => this.props.handlePatch(this.props.task.id)} />
                                 <Form.Text className="text-muted">
                                     Due: {this.props.task.dueDate}

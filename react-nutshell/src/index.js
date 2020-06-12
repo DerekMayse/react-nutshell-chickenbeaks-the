@@ -2,13 +2,30 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Nutshell from './Components/Nutshell';
+import Login from './Components/auth/Login'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from 'react-router-dom';
 
+function MainPage(props) {
+	return <Nutshell />
+}
+
+function LoginPage(props){
+	return <Login {...props}/>
+}
+
+function CurrentPage(props) {
+	const isLoggedIn = props.isLoggedIn;
+	if (isLoggedIn) {
+	  return <MainPage />;
+	}
+	return <LoginPage />;
+  }
+
 ReactDOM.render(
 	<Router>
-		<Nutshell />
+		<CurrentPage isLoggedIn={true} />
 	</Router>,
 	document.getElementById('root')
 );
