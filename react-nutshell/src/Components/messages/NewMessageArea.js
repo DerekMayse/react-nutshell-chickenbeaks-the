@@ -2,13 +2,10 @@ import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
 import { Form, Container } from "react-bootstrap";
 import "./Messages.css";
-import MessagesManager from "../../modules/MessagesManager";
 
 class NewMessageArea extends Component {
   state = {
-    message: "",
-    messages: [],
-    curTime: new Date().toLocaleTimeString(),
+    message: "", 
   };
 
   handleNewFieldChange = (evt) => {
@@ -17,41 +14,34 @@ class NewMessageArea extends Component {
     });
   };
 
-  createNewMessage = (evt) => {    
+  createNewMessage = (evt) => {
     const newlyCreatedMessage = {
       message: this.state.message,
-      time: this.state.curTime
+      time: this.props.curTime,
     };
 
-    MessagesManager.postMessage(newlyCreatedMessage).then(() => {
-        MessagesManager.getAllMessages().then(
-            (newMessages) => {
-                this.setState({
-                    messages: newMessages,
-                })
-            }
-        )
-    })
-
+    this.props.handleNew(newlyCreatedMessage);
   };
 
   render() {
     return (
       <>
         <Container className="new-message-form">
-          <Form.Group>
+          <Form.Group
+          >
             <Form.Control
               size="lg"
               type="text"
               onChange={this.handleNewFieldChange}
               value={this.state.message}
               placeholder="New Message"
+              
             />
           </Form.Group>
         </Container>
         <div>
           <Button
-            type="submit"
+            type="button"
             variant="primary"
             size="lg"
             onClick={() => this.createNewMessage()}

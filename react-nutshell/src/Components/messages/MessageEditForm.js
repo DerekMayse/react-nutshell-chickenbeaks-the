@@ -4,13 +4,16 @@ import { Form, Button, ButtonGroup } from "react-bootstrap";
 class MessageEditForm extends Component {
   state = {
     messageText: this.props.message.message,
+    loadingStatus: true,
   };
 
-  handleFieldChange = (evt) => {
+  handleEditFieldChange = (evt) => {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
   };
+
+
 
   makeEditedMessage = () => {
     const editedMessage = {
@@ -29,11 +32,12 @@ class MessageEditForm extends Component {
           <div className="message-card">
             <div className="message-text">
               <Form>
-                <Form.Group controlId="exampleForm.ControlInput1">
+                <Form.Group>
                   <Form.Control
                     type="text"
                     placeholder="Message"
-                    required onChange={this.handleFieldChange}
+                    id="messageText"
+                    required onChange={this.handleEditFieldChange}
                     value={this.state.messageText}
                   />
                 </Form.Group>

@@ -12,14 +12,14 @@ class MessagesPage extends Component {
     message: "",
     editId: "",
     loadingStatus: false,
+    curTime: new Date().toLocaleTimeString(),
   };
 
   handleCancel() {}
-  
+
   handleEditId = (idToEdit) => {
     this.setState({ editId: idToEdit });
   };
-
 
   updateExistingMessage = (editedMessage) => {
     this.setState({ loadingStatus: true });
@@ -33,13 +33,15 @@ class MessagesPage extends Component {
     });
   };
 
-  //   componentDidUpdate() {
-  //     MessagesManager.getAllMessages().then((newMessages) => {
-  //       this.setState({
-  //         messages: newMessages,
-  //       });
-  //     });
-  //   }
+  refreshPage = (newlyCreatedMessage) => {
+    MessagesManager.postMessage(newlyCreatedMessage).then(() => {
+      MessagesManager.getAllMessages().then((newMessages) => {
+        this.setState({
+          messages: newMessages,
+        });
+      });
+    });
+  };
 
   deleteMessage = (id) => {
     MessagesManager.deleteMessages(id).then(() => {
@@ -50,9 +52,6 @@ class MessagesPage extends Component {
       });
     });
   };
-
-
-
 
   componentDidMount() {
     MessagesManager.getAllMessages().then((messages) => {
@@ -68,33 +67,29 @@ class MessagesPage extends Component {
         <Container className="messages-container">
           {this.state.messages.map((message) =>
             this.state.editId !== message.id ? (
-                <MessageCard
+              <MessageCard
                 key={message.id}
                 message={message}
                 deleteMessage={this.deleteMessage}
                 handleEditId={this.handleEditId}
                 {...this.props}
               />
-
-              
-
-
             ) : (
-                <MessageEditForm 
+              <MessageEditForm
                 key={message.id}
                 message={message}
                 handleEditId={this.handleEditId}
                 handleUpdate={this.updateExistingMessage}
-                
               />
-
-
             )
           )}
         </Container>
 
         <Container fixed="bottom" className="new-message-form-container">
-          <NewMessageArea />
+          <NewMessageArea 
+          handleNew={this.refreshPage}
+          curTime={this.state.curTime}
+          />
         </Container>
       </>
     );
