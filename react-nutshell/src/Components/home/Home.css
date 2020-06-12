@@ -1,0 +1,16 @@
+div.card-container{
+    display: flex;
+    flex-direction: row;
+}
+
+div.card{
+    margin: 1em;
+}
+
+div.home-intro{
+    text-align: center;
+}
+
+img.card-img-top{
+    border-bottom: 1px solid rgb(212, 210, 210);
+}

@@ -1,35 +1,26 @@
-import { Route } from "react-router-dom";
 import React, { Component } from "react";
 import HomePage from "./home/Home";
 import UserForm from "./auth/UserForm";
+import { Route, Redirect } from "react-router-dom";
+
+import Login from "./auth/Login";
 import NewsForm from "./news/NewsForm";
 import NewsList from "./news/NewsList";
 import NewsEditForm from "./news/NewsEditForm";
-import TaskList from './tasks/TaskList';
-import TaskForm from './tasks/TaskForm';
+import TaskList from "./tasks/TaskList";
+import TaskForm from "./tasks/TaskForm";
 import MessagesPage from "./messages/MessagePage";
 import EventList from "./events/EventList";
 import NewEventForm from "./events/NewEventForm";
 import EventEditForm from "./events/EventEditForm";
-import Login from "./auth/Login";
+
 class ApplicationViews extends Component {
+	isAuthenticated = () => localStorage.getItem("credentials") !== null;
   render() {
+    
     return (
       <React.Fragment>
-        <Route
-          exact
-          path="/"
-          render={(props) => {
-            return <Login />;
-          }}
-        />
-        <Route
-          exact
-          path="/home"
-          render={(props) => {
-            return <HomePage />;
-          }}
-        />
+   
         <Route
           exact
           path="/register-account"
@@ -37,11 +28,29 @@ class ApplicationViews extends Component {
             return <UserForm {...props} />;
           }}
         />
+
+        <Route exact path="/" component={Login} />
+
+        <Route
+          exact
+          path="/home"
+          render={(props) => {
+            if (this.isAuthenticated()) {
+              return <HomePage {...props} />;
+            } else {
+              return <Redirect to="/" />;
+            }
+          }}
+        />
         <Route
           exact
           path="/news"
           render={(props) => {
-            return <NewsList {...props} />;
+            if (this.isAuthenticated()) {
+              return <NewsList {...props} />;
+            } else {
+              return <Redirect to="/" />;
+            }
           }}
         />
         <Route
@@ -58,26 +67,37 @@ class ApplicationViews extends Component {
             return <NewsEditForm {...props} />;
           }}
         />
-     
-      {/* Route to tasks page that prints all tasks under a particular user to the DOM */}
-	  <Route
-					exact path="/tasks"
-					render={(props) => {
-						return <TaskList {...props}/>;
-					}}
-				/>
+
+        {/* Route to tasks page that prints all tasks under a particular user to the DOM */}
+        <Route
+          exact
+          path="/tasks"
+          render={(props) => {
+            if (this.isAuthenticated()) {
+              return <TaskList {...props} />;
+            } else {
+              return <Redirect to="/" />;
+            }
+          }}
+        />
 
         {/* Route to 'add new task'form */}
-				<Route exact path="/tasks/new" render={(props) => {
-						return <TaskForm {...props}/>
-					}} 
-				/>
-
+        <Route
+          exact
+          path="/tasks/new"
+          render={(props) => {
+            return <TaskForm {...props} />;
+          }}
+        />
         <Route
           exact
           path="/events"
           render={(props) => {
-            return <EventList {...props} />;
+            if (this.isAuthenticated()) {
+              return <EventList {...props} />;
+            } else {
+              return <Redirect to="/" />;
+            }
           }}
         />
         <Route
@@ -94,14 +114,18 @@ class ApplicationViews extends Component {
           }}
         />
         <Route
+          exact
           path="/messages"
           render={(props) => {
-            return <MessagesPage />;
+            if (this.isAuthenticated()) {
+              return <MessagesPage {...props} />;
+            } else {
+              return <Redirect to="/" />;
+            }
           }}
         />
-
-			</React.Fragment>
-		);
+      </React.Fragment>
+    );
   }
 }
 

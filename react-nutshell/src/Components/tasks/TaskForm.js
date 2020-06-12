@@ -30,7 +30,7 @@ class TaskForm extends Component {
                 name: this.state.taskName,
                 dueDate: this.state.due,
                 isCompleted: false,
-                userId: 4,
+                userId: localStorage.getItem("userId"),
             };
 
             TaskManager.post(task)
