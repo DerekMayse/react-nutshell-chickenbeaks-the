@@ -1,7 +1,7 @@
 import { Route } from "react-router-dom";
 import React, { Component } from "react";
 import HomePage from "./home/Home";
-import UserForm from "./user-registration/UserForm";
+import UserForm from "./auth/UserForm";
 import NewsForm from "./news/NewsForm";
 import NewsList from "./news/NewsList";
 import NewsEditForm from "./news/NewsEditForm";
