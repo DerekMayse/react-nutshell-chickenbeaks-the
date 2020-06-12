@@ -6,8 +6,8 @@ class NavBar extends Component {
 	render() {
 		return (
 			<React.Fragment>
-				<Navbar fixed="top" bg="dark" variant="dark">
-					<Navbar.Brand href="#home">Nutshell</Navbar.Brand>
+				<Navbar sticky="top" bg="dark" variant="dark">
+					<Navbar.Brand >Nutshell</Navbar.Brand>
 					<Nav className="mr-auto">
 						<Nav.Link href="/home">Home</Nav.Link>
 						<Nav.Link href="/news">News</Nav.Link>

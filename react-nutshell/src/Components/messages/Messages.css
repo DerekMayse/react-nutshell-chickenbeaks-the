@@ -1,7 +1,6 @@
 .messages-container {
     overflow-y: scroll;
     height: 78vh;
-    margin-top: 4rem;
     margin-bottom: 0.5rem;
     width: 8rem;
     /* vertical-align: bottom; */

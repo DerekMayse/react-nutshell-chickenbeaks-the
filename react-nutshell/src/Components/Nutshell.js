@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 import React, {Component, Fragment} from 'react'
-=======
-import React, {Component} from 'react'
-// import Login from './auth/Login'
->>>>>>> master
 import NavBar from './nav/NavBar'
 import ApplicationViews from './ApplicationViews'
 
