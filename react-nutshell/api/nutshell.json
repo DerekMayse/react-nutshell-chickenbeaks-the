@@ -6,7 +6,7 @@
       "email": "havokmal3k@yahoo.com",
       "username": "Hav3k",
       "password": "123",
-      "id": 1
+      "id": 8
     },
     {
       "name": "1",
@@ -111,6 +111,14 @@
       "username": "ciw",
       "password": "xsk",
       "id": 14
+    },
+    {
+      "name": "Derek",
+      "address": "1173 County Road 1 Lot 21",
+      "email": "havokmal3k@yahoo.com",
+      "username": "Hav3k",
+      "password": "123",
+      "id": 15
     }
   ],
   "events": [
