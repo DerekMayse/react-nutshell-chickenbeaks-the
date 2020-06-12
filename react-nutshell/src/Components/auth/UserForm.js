@@ -41,7 +41,7 @@ class UserForm extends Component {
       
       console.log(users);
       UserRegistation.post(users).then().then(() =>
-        this.props.history.push("/home")
+      window.alert("Account Created Successfully") || this.props.history.push("/")
       );
     }
   };
@@ -113,7 +113,7 @@ class UserForm extends Component {
               <button
                 type="button"
                 disabled={this.state.loadingStatus}
-                onClick={this.constructNewUser && this.handleLogin} 
+                onClick={this.constructNewUser } 
               >
                 Register
               </button>
