@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-// import Login from './auth/Login'
 import NavBar from './nav/NavBar'
 import ApplicationViews from './ApplicationViews'
 
