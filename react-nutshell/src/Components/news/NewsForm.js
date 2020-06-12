@@ -9,6 +9,10 @@ class NewsForm extends Component {
     loadingStatus: false,
   };
 
+  uniquecheck = () => {
+    
+  }
+  
   handleFieldChange = (evt) => {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;

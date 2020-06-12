@@ -17,7 +17,7 @@ class ApplicationViews extends Component {
           return <Login/>
         }} />
         <Route
-          path="/home"
+         exact path="/home"
           render={(props) => {
             return <HomePage />;
           }}
@@ -25,7 +25,7 @@ class ApplicationViews extends Component {
           <Route
           exact path="/register-account"
           render={(props) => {
-            return <UserForm />;
+            return <UserForm {...props}/>;
           }}
         />
         <Route
@@ -36,13 +36,13 @@ class ApplicationViews extends Component {
           }}
         />
         <Route
-          path="/news/new"
+         exact path="/news/new"
           render={(props) => {
             return <NewsForm {...props} />;
           }}
         />
         <Route
-          path="/news/:newsId(\d+)/edit"
+         exact path="/news/:newsId(\d+)/edit"
           render={(props) => {
             return <NewsEditForm {...props} />;
           }}

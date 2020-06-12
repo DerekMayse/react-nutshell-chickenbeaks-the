@@ -10,6 +10,7 @@ class UserForm extends Component {
     password: "",
     loadingStatus: false,
   };
+  
 
   handleFieldChange = (evt) => {
     const stateToChange = {};
@@ -35,18 +36,36 @@ class UserForm extends Component {
         email: this.state.email,
         username: this.state.username,
         password: this.state.password,
-        userId: 2,
+        
       };
+      
       console.log(users);
-      UserRegistation.post(users).then(() =>
+      UserRegistation.post(users).then().then(() =>
         this.props.history.push("/home")
       );
     }
   };
+  handleLogin = (e) => {
+    e.preventDefault()
+    /*
+        For now, just store the email and password that
+        the customer enters into local storage.
+    */
+    localStorage.setItem(
+        "credentials",
+        JSON.stringify({
+            email: this.state.email,
+            password: this.state.password
+        })
+    )
+    this.props.history.push("/home")
+  }
 
+  
   render() {
     return (
       <>
+      <h1>Account Registration</h1>
         <form>
           <fieldset>
             <div className="formgrid">
@@ -94,7 +113,7 @@ class UserForm extends Component {
               <button
                 type="button"
                 disabled={this.state.loadingStatus}
-                onClick={this.constructNewUser}
+                onClick={this.constructNewUser && this.handleLogin} 
               >
                 Register
               </button>
