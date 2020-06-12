@@ -95,6 +95,22 @@
       "username": "jj",
       "password": "gvjhkb",
       "id": 12
+    },
+    {
+      "name": "H",
+      "address": "FOEMGF",
+      "email": "D",
+      "username": "I",
+      "password": "D",
+      "id": 13
+    },
+    {
+      "name": "Derek",
+      "address": "kwdn",
+      "email": "wk",
+      "username": "ciw",
+      "password": "xsk",
+      "id": 14
     }
   ],
   "events": [
@@ -130,39 +146,18 @@
   "articles": [
     {
       "id": 1,
-      "title": "Tester Articles",
+      "title": "Tester Articles 2",
       "synopsis": "Published on Ashon's Account",
       "url": "testing.com/",
       "date": "06/08/2020"
     },
     {
-      "id": 2,
-      "name": "Tester",
-      "date": "06/08/2020",
-      "location": "Derek's Account",
-      "userId": 2
-    },
-    {
-      "id": 3,
-      "name": "Tester",
-      "date": "06/08/2020",
-      "location": "Mike's Account",
-      "userId": 3
-    },
-    {
-      "id": 4,
-      "name": "Tester",
-      "date": "06/08/2020",
-      "location": "Swathi's Account",
-      "userId": 4
-    },
-    {
-      "title": "Look at ME!!",
+      "title": "Testing ",
       "synopsis": "of this",
-      "url": "dummy article",
-      "date": "5/12/2020 8:24",
+      "url": "test.com",
+      "date": "5/12/2020 11:31",
       "userId": 2,
-      "id": 5
+      "id": 2
     }
   ],
   "messages": [

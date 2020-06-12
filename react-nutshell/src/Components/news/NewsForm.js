@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import NewsManager from "../../modules/NewsManager";
+import { Form, Button } from 'react-bootstrap'
 
 class NewsForm extends Component {
   state = {
@@ -44,46 +45,37 @@ class NewsForm extends Component {
   render() {
     return (
       <>
-        <form>
-          <fieldset>
-            <div className="formgrid">
-              <input
-                type="text"
-                required
-                onChange={this.handleFieldChange}
-                id="title"
-                placeholder="Title"
-              />
-
-              <input
-                type="text"
-                required
-                onChange={this.handleFieldChange}
-                id="synopsis"
+       
+<Form>
+  <Form.Group controlId="formBasicEmail">
+    
+    
+    <Form.Control type="text" placeholder="Article Title"  onChange={this.handleFieldChange}
+                
+                id="title"/>
+  </Form.Group>
+  <Form.Group>
+ 
+    <Form.Control    onChange={this.handleFieldChange}
                 placeholder="Story Synopsis"
-              />
+                id="synopsis"/>
+  </Form.Group>
+  <Form.Group>
+  
+    <Form.Control onChange={this.handleFieldChange}
+                placeholder="Site URL"
+                id="url"/>
+  </Form.Group>
 
-              <input
-                type="text"
-                required
-                onChange={this.handleFieldChange}
-                id="url"
-                placeholder="URL"
-              />
 
-            </div>
-            <div className="alignRight">
-              <button
-                type="button"
-                disabled={this.state.loadingStatus}
-                onClick={this.constructNewArticle}
-              >
-                Save
-              </button>
-            </div>
-          </fieldset>
-        </form>
-      </>
+  <Button variant="primary" type="submit"disabled={this.state.loadingStatus}
+                onClick={this.constructNewArticle} >
+    Save
+  </Button>
+  </Form>
+  </>
+
+      
     );
   }
 }

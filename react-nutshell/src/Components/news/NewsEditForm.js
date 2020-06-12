@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import NewsManager from "../../modules/NewsManager"
+import { Form, Button } from 'react-bootstrap'
 
 
 class NewsEditForm extends Component {
@@ -18,7 +19,7 @@ class NewsEditForm extends Component {
       this.setState(stateToChange)
     }
 
-    updateExistingAnimal = evt => {
+    updateExistingArticle = evt => {
 
       evt.preventDefault()
       this.setState({ loadingStatus: true });
@@ -50,50 +51,37 @@ class NewsEditForm extends Component {
 
     render() {
             return (
-        <>
-        <form>
-          <fieldset>
-            <div className="formgrid">
-              <input
-                type="text"
-                required
-                onChange={this.handleFieldChange}
+<>
+<Form>
+  <Form.Group controlId="formBasicEmail">
+    
+    
+    <Form.Control type="text"  onChange={this.handleFieldChange}
                 value={this.state.title}
-                id="title"
-                placeholder="Title"
-              />
-
-              <input
-                type="text"
-                required
-                onChange={this.handleFieldChange}
+                id="title"/>
+  </Form.Group>
+  <Form.Group>
+ 
+    <Form.Control    onChange={this.handleFieldChange}
                 value={this.state.synopsis}
-                id="synopsis"
-                placeholder="Story Synopsis"
-              />
-
-              <input
-                type="text"
-                required
-                onChange={this.handleFieldChange}
+                id="synopsis"/>
+  </Form.Group>
+  <Form.Group>
+  
+    <Form.Control onChange={this.handleFieldChange}
                 value={this.state.url}
-                id="url"
-                placeholder="URL"
-              />
+                id="url"/>
+  </Form.Group>
 
-            </div>
-            <div className="alignRight">
-              <button
-                type="button"
-                disabled={this.state.loadingStatus}
-                onClick={this.updateExistingAnimal}
-              >
-                Save
-              </button>
-            </div>
-          </fieldset>
-        </form>
-        </>
+
+  <Button variant="primary" type="submit"disabled={this.state.loadingStatus}
+                onClick={this.updateExistingArticle} >
+    Save
+  </Button>
+  </Form>
+  </>
+
+        
       );
     }
 }

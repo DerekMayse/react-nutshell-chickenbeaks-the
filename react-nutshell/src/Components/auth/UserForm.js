@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import UserRegistation from "../../modules/UserRegistration";
+import { Form, Button } from 'react-bootstrap'
 
 class UserForm extends Component {
   state = {
@@ -61,65 +62,46 @@ class UserForm extends Component {
     this.props.history.push("/home")
   }
 
+ 
+
   
   render() {
     return (
       <>
       <h1>Account Registration</h1>
-        <form>
-          <fieldset>
-            <div className="formgrid">
-              <input
-                type="text"
-                required
-                onChange={this.handleFieldChange}
-                id="name"
-                placeholder="Name"
-              />
-
-              <input
-                type="text"
-                required
-                onChange={this.handleFieldChange}
-                id="address"
-                placeholder="Address"
-              />
-
-              <input
-                type="text"
-                required
-                onChange={this.handleFieldChange}
-                id="email"
-                placeholder="Email Address"
-              />
-
-              <input
-                type="text"
-                required
-                onChange={this.handleFieldChange}
-                id="username"
-                placeholder="UserName"
-              />
-
-              <input
-                type="password"
-                required
-                onChange={this.handleFieldChange}
-                id="password"
-                placeholder="Password"
-              />
-            </div>
-            <div className="alignRight">
-              <button
-                type="button"
+       <Form>
+  <Form.Group controlId="formBasicEmail">
+   
+    <Form.Control type="text" placeholder="Name"   onChange={this.handleFieldChange}
+                id="name"/>
+  </Form.Group>
+  <Form.Group controlId="formBasicEmail">
+   
+    <Form.Control type="text" placeholder="Address"   onChange={this.handleFieldChange}
+                id="address" />
+  </Form.Group>
+  <Form.Group controlId="formBasicEmail">
+    
+    <Form.Control type="text" placeholder="Email"  onChange={this.handleFieldChange}
+                id="email"/>
+  </Form.Group>
+  <Form.Group controlId="formBasicEmail">
+    
+    <Form.Control type="text" placeholder="Username"  onChange={this.handleFieldChange}
+                id="username"/>
+  </Form.Group>
+  <Form.Group controlId="formBasicPassword">
+    
+    <Form.Control type="password" placeholder="Password"  onChange={this.handleFieldChange}
+                id="password"/>
+  </Form.Group>
+  
+  <Button variant="primary" type="button"
                 disabled={this.state.loadingStatus}
-                onClick={this.constructNewUser } 
-              >
-                Register
-              </button>
-            </div>
-          </fieldset>
-        </form>
+                onClick={this.constructNewUser }  >
+    Submit
+  </Button>
+</Form>
       </>
     );
   }
