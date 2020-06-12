@@ -15,7 +15,6 @@ class Home extends Component {
 				</div><hr />
 				<Container className="card-container">
 					<Card className="news-card" style={{ width: '18rem' }}>
-						<Card.Img variant="top" src="holder.js/100px180" />
 						<Card.Body>
 							<Card.Title>News</Card.Title>
 							<Card.Text>
@@ -26,17 +25,15 @@ class Home extends Component {
 						</Card.Body>
 					</Card>
 					<Card className="tasks-card" style={{ width: '18rem' }}>
-						<Card.Img variant="top" src={require('./tasks-img.PNG')} />
 						<Card.Body>
 							<Card.Title>Tasks</Card.Title>
 							<Card.Text>
-							<small>* Add a task to your task list to keep track of everything you have to do in your busy life.<br />* Completing your tasks like a bawse? Click on the checkbox to the left of the task you completed to remove it from list..and your mind.<br/>* Edit a task by selecting its name.</small>
+							<small>* Add a task to your task list to keep track of everything you have to do in your busy life.<br />* Completing your tasks like a bawse? Click on the checkbox to the left of the task you completed to remove it from the list..and your mind.<br/>* Edit a task by selecting its name.</small>
 							</Card.Text>
 							<Button variant="primary" onClick={() => this.props.history.push("/tasks")}>Visit Page</Button>
 						</Card.Body>
 					</Card>
 					<Card className="events-card" style={{ width: '18rem' }}>
-						<Card.Img variant="top" src="holder.js/100px180" />
 						<Card.Body>
 							<Card.Title>Events</Card.Title>
 							<Card.Text>
@@ -47,7 +44,6 @@ class Home extends Component {
 						</Card.Body>
 					</Card>
 					<Card className="messages-card" style={{ width: '18rem' }}>
-						<Card.Img variant="top" src="holder.js/100px180" />
 						<Card.Body>
 							<Card.Title>Messages</Card.Title>
 							<Card.Text>
