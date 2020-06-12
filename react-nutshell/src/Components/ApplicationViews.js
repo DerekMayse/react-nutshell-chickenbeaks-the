@@ -5,7 +5,8 @@ import UserForm from "./auth/UserForm";
 import NewsForm from "./news/NewsForm";
 import NewsList from "./news/NewsList";
 import NewsEditForm from "./news/NewsEditForm";
-import TasksPage from "./tasks/TaskPage";
+import TaskList from './tasks/TaskList';
+import TaskForm from './tasks/TaskForm';
 import MessagesPage from "./messages/MessagePage";
 import EventList from "./events/EventList";
 import NewEventForm from "./events/NewEventForm";
@@ -57,12 +58,21 @@ class ApplicationViews extends Component {
             return <NewsEditForm {...props} />;
           }}
         />
-        <Route
-          path="/tasks"
-          render={(props) => {
-            return <TasksPage />;
-          }}
-        />
+     
+      {/* Route to tasks page that prints all tasks under a particular user to the DOM */}
+	  <Route
+					exact path="/tasks"
+					render={(props) => {
+						return <TaskList {...props}/>;
+					}}
+				/>
+
+        {/* Route to 'add new task'form */}
+				<Route exact path="/tasks/new" render={(props) => {
+						return <TaskForm {...props}/>
+					}} 
+				/>
+
         <Route
           exact
           path="/events"
@@ -89,8 +99,9 @@ class ApplicationViews extends Component {
             return <MessagesPage />;
           }}
         />
-      </React.Fragment>
-    );
+
+			</React.Fragment>
+		);
   }
 }
 
