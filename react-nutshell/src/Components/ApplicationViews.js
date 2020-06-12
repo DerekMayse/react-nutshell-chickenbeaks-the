@@ -1,4 +1,4 @@
-import { Route, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import React, { Component } from 'react';
 import HomePage from './home/Home';
 import NewsPage from './news/NewsPage';
@@ -8,7 +8,7 @@ import MessagesPage from './messages/MessagePage';
 import EventsPage from './events/EventPage';
 
 class ApplicationViews extends Component {
-	isAuthenticated = () => localStorage.getItem("credentials") !== null
+	// isAuthenticated = () => localStorage.getItem("credentials") !== null
 
 	render() {
 		return (
@@ -16,21 +16,13 @@ class ApplicationViews extends Component {
 				<Route
 					path="/home"
 					render={(props) => {
-						if (this.isAuthenticated()) {
-							return <HomePage />
-						} else {
-							return <Redirect to="/login" />
-						}
+						return <HomePage />;
 					}}
 				/>
 				<Route
 					path="/news"
 					render={(props) => {
-						if (this.isAuthenticated()) {
-							return <NewsPage />
-						} else {
-							return <Redirect to="/login" />
-						}
+						return <NewsPage />;
 					}}
 				/>
 				<Route
