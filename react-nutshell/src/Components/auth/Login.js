@@ -36,7 +36,7 @@ class Login extends Component {
     } else{
         if (this.state.password === user[0].password){
             localStorage.setItem("userId", user[0].id);
-            localStorage.setItem("userName", user[0].username);
+            localStorage.setItem("userName", user[0].name);
             localStorage.setItem(
             "credentials",
             JSON.stringify({
@@ -77,7 +77,7 @@ class Login extends Component {
               <div className="button-row">
                 <Button variant="outline-success" type="submit">Submit </Button>
               </div>     
-              <Link to={`/register-account`}>Register An Account?</Link>
+              <Link className="register-link" to={`/register-account`}>Register An Account?</Link>
             </Form>
           </Container>
       </>

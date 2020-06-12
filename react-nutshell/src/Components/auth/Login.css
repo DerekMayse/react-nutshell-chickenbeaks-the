@@ -21,3 +21,7 @@ div.login-form{
     border-radius: 1em;
     background-image: url("https://cdn.statically.io/img/www.itl.cat/pics/b/37/374853_white-background-wallpaper.jpg");
 }
+
+.register-link{
+    text-align: center;
+}

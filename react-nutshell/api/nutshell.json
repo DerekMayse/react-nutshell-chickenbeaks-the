@@ -119,6 +119,14 @@
       "username": "Hav3k",
       "password": "123",
       "id": 15
+    },
+    {
+      "name": "Swathi",
+      "address": "None ya business",
+      "email": "swathi@email.com",
+      "username": "swathi1",
+      "password": "abc123",
+      "id": 16
     }
   ],
   "events": [
@@ -292,28 +300,28 @@
       "name": "Swathi's Task",
       "dueDate": "2020-06-09",
       "isCompleted": false,
-      "userId": 4
+      "userId": 16
     },
     {
       "id": 5,
       "name": "Wash dishes",
       "dueDate": "2020-06-09",
       "isCompleted": false,
-      "userId": 4
+      "userId": 16
     },
     {
       "id": 6,
       "name": "Complete add functionality",
       "dueDate": "2020-06-10",
       "isCompleted": false,
-      "userId": 4
+      "userId": 16
     },
     {
       "id": 7,
       "name": "Meditate",
       "dueDate": "2020-06-13",
       "isCompleted": false,
-      "userId": 4
+      "userId": 16
     }
   ]
 }
