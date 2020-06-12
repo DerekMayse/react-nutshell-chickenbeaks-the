@@ -4,6 +4,13 @@ import TaskEditForm from './TaskEditForm'
 import TaskManager from '../../modules/TaskManager'
 import { Button, Container } from 'react-bootstrap'
 
+// TaskList page prints tasks to the DOM, refactored to allow inline editing on the same page
+// handlePatch to incomplete to complete, had to refactor from a route(/tasks) to getALL
+// handleEditID to set value to editID; passed from parent to child (TaskCard) to get id
+// updateExistingTask to update task with edited object passed in from TaskEditForm
+// componentDidMount to print all task to DOM
+// Render conditional where if editID equals the id of the current task being looped through, render editForm, else render task card to print each task
+//**getting an id for a specific task can only happen on the taskCard page 
 class TaskList extends Component {
     state = {
         tasks: [],

@@ -41,12 +41,16 @@ class ApplicationViews extends Component {
             return <NewsEditForm {...props} />;
           }}
         />
+
+        {/* Route to tasks page that prints all tasks under a particular user to the DOM */}
 				<Route
 					exact path="/tasks"
 					render={(props) => {
 						return <TaskList {...props}/>;
 					}}
 				/>
+
+        {/* Route to 'add new task'form */}
 				<Route exact path="/tasks/new" render={(props) => {
 						return <TaskForm {...props}/>
 					}} 
