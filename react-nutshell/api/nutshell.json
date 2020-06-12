@@ -27,32 +27,32 @@
   ],
   "events": [
     {
-      "id": 1,
-      "name": "Tester",
-      "date": "06/08/2020",
-      "location": "Ashon's Account",
-      "userId": 1
+      "name": "Testing delete stuff",
+      "date": "2020-06-08",
+      "location": "Home",
+      "userId": 2,
+      "id": 8
     },
     {
-      "id": 2,
-      "name": "Tester",
-      "date": "06/08/2020",
-      "location": "Derek's Account",
-      "userId": 2
+      "id": 18,
+      "userId": 2,
+      "name": "Help",
+      "location": "React",
+      "date": "2020-06-16"
     },
     {
-      "id": 3,
-      "name": "Tester",
-      "date": "06/08/2020",
-      "location": "Mike's Account",
-      "userId": 3
+      "id": 19,
+      "userId": 2,
+      "name": "Testing Edit",
+      "location": "Home",
+      "date": "2020-06-03"
     },
     {
-      "id": 4,
-      "name": "Tester",
-      "date": "06/08/2020",
-      "location": "Swathi's Account",
-      "userId": 4
+      "name": "Fixed Merge?",
+      "date": "2020-06-11",
+      "location": "Test",
+      "userId": 2,
+      "id": 21
     }
   ],
   "articles": [
@@ -173,28 +173,49 @@
     {
       "id": 1,
       "name": "Ashon's Task",
-      "completionDate": "06/09/2020",
+      "dueDate": "2020-06-09",
       "isCompleted": false,
       "userId": 1
     },
     {
       "id": 2,
       "name": "Derek's Task",
-      "completionDate": "06/09/2020",
+      "dueDate": "2020-06-09",
       "isCompleted": false,
       "userId": 2
     },
     {
       "id": 3,
       "name": "Mike's Task",
-      "completionDate": "06/09/2020",
+      "dueDate": "2020-06-09",
       "isCompleted": false,
       "userId": 3
     },
     {
       "id": 4,
-      "name": "Swathi's Task",
-      "completionDate": "06/09/2020",
+      "name": "Swathi's Tasks",
+      "dueDate": "2020-06-09",
+      "isCompleted": false,
+      "userId": 4
+    },
+    {
+      "id": 5,
+      "name": "Wash dishes",
+      "dueDate": "2020-06-09",
+      "isCompleted": false,
+      "userId": 4
+    },
+    {
+      "id": 6,
+      "name": "Complete add functionality",
+      "dueDate": "2020-06-10",
+      "isCompleted": false,
+      "userId": 4
+    },
+    {
+      "id": 7,
+      "name": "Meditate",
+      "dueDate": "2020-06-13",
       "isCompleted": false,
       "userId": 4
     }
