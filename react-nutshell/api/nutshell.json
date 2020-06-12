@@ -115,28 +115,49 @@
     {
       "id": 1,
       "name": "Ashon's Task",
-      "completionDate": "06/09/2020",
+      "dueDate": "2020-06-09",
       "isCompleted": false,
       "userId": 1
     },
     {
       "id": 2,
       "name": "Derek's Task",
-      "completionDate": "06/09/2020",
+      "dueDate": "2020-06-09",
       "isCompleted": false,
       "userId": 2
     },
     {
       "id": 3,
       "name": "Mike's Task",
-      "completionDate": "06/09/2020",
+      "dueDate": "2020-06-09",
       "isCompleted": false,
       "userId": 3
     },
     {
       "id": 4,
-      "name": "Swathi's Task",
-      "completionDate": "06/09/2020",
+      "name": "Swathi's Tasks",
+      "dueDate": "2020-06-09",
+      "isCompleted": false,
+      "userId": 4
+    },
+    {
+      "id": 5,
+      "name": "Wash dishes",
+      "dueDate": "2020-06-09",
+      "isCompleted": false,
+      "userId": 4
+    },
+    {
+      "id": 6,
+      "name": "Complete add functionality",
+      "dueDate": "2020-06-10",
+      "isCompleted": false,
+      "userId": 4
+    },
+    {
+      "id": 7,
+      "name": "Meditate",
+      "dueDate": "2020-06-13",
       "isCompleted": false,
       "userId": 4
     }

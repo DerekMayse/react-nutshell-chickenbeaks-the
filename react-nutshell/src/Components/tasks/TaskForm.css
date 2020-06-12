@@ -1,0 +1,16 @@
+div.add-newTask-form, div.edit-task-form, div.inline-edit-form{
+    width: 30%;
+}
+
+div.button-row{
+    text-align: center;
+    margin: 2em;
+}
+
+/* .submit-btn{
+    margin-left: 6em;
+} */
+
+h2.form-title{
+    text-align: center;
+}
