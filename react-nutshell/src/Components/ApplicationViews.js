@@ -78,7 +78,7 @@ class ApplicationViews extends Component {
 				<Route
 					path="/messages"
 					render={(props) => {
-						return <MessagesPage />;
+						return <MessagesPage {...props} />;
 					}}
 				/>
 			</React.Fragment>

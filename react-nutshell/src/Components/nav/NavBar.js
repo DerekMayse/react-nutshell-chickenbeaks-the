@@ -6,7 +6,7 @@ class NavBar extends Component {
 	render() {
 		return (
 			<React.Fragment>
-				<Navbar bg="dark" variant="dark">
+				<Navbar fixed="top" bg="dark" variant="dark">
 					<Navbar.Brand href="#home">Nutshell</Navbar.Brand>
 					<Nav className="mr-auto">
 						<Nav.Link href="/home">Home</Nav.Link>
