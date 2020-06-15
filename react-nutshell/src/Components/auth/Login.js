@@ -76,8 +76,10 @@ class Login extends Component {
               </Form.Group>
               <div className="button-row">
                 <Button variant="outline-success" type="submit">Submit </Button>
-              </div>     
-              <Link className="register-link" to={`/register-account`}>Register An Account?</Link>
+              </div>
+              <div className="register-link">     
+                <Link  to={`/register-account`}>Register An Account?</Link>
+              </div>
             </Form>
           </Container>
       </>

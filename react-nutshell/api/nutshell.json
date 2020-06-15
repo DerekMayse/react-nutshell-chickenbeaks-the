@@ -127,6 +127,14 @@
       "username": "swathi1",
       "password": "abc123",
       "id": 16
+    },
+    {
+      "name": "Ashon",
+      "address": "None ya business",
+      "email": "ashon@email.com",
+      "username": "ashon1",
+      "password": "abc123",
+      "id": 17
     }
   ],
   "events": [
@@ -160,14 +168,6 @@
     }
   ],
   "articles": [
-    {
-      "id": 1,
-      "title": "Tester Articles 2",
-      "url": "testing.com/",
-      "synopsis": "Published on Ashon's Account",
-      "date": "06/08/2020",
-      "userId": 1
-    },
     {
       "id": 2,
       "title": "Tester Article",
@@ -275,13 +275,6 @@
   ],
   "tasks": [
     {
-      "id": 1,
-      "name": "Ashon's Task",
-      "dueDate": "2020-06-09",
-      "isCompleted": false,
-      "userId": 1
-    },
-    {
       "id": 2,
       "name": "Derek's Task",
       "dueDate": "2020-06-09",
@@ -299,7 +292,7 @@
       "id": 4,
       "name": "Swathi's Task",
       "dueDate": "2020-06-09",
-      "isCompleted": false,
+      "isCompleted": true,
       "userId": 16
     },
     {
@@ -322,6 +315,13 @@
       "dueDate": "2020-06-13",
       "isCompleted": false,
       "userId": 16
+    },
+    {
+      "id": 8,
+      "name": "Trip to Orlando",
+      "dueDate": "2020-06-27",
+      "isCompleted": false,
+      "userId": "16"
     }
   ]
 }

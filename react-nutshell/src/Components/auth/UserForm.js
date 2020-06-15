@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import UserRegistation from "../../modules/UserRegistration";
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, Container } from 'react-bootstrap'
+import './UserForm.css'
 
 class UserForm extends Component {
   state = {
@@ -68,7 +69,8 @@ class UserForm extends Component {
   render() {
     return (
       <>
-      <h1>Account Registration</h1>
+      <Container className="register-form"><br/>
+      <h1 className="register-title">Account Registration</h1>
        <Form>
   <Form.Group controlId="formBasicEmail">
    
@@ -96,12 +98,15 @@ class UserForm extends Component {
                 id="password"/>
   </Form.Group>
   
+  <div className="button-row">
   <Button variant="primary" type="button"
                 disabled={this.state.loadingStatus}
                 onClick={this.constructNewUser }  >
     Submit
   </Button>
+  </div>
 </Form>
+</Container>
       </>
     );
   }
